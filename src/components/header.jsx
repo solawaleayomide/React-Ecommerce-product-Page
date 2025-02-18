@@ -3,8 +3,10 @@ import cart from "/assets/icon-cart.svg";
 import avatar from "/assets/image-avatar.png";
 import { useState } from "react";
 import Cart from "./cart";
+import { useCart } from "../context/CartContext";
 
 function Header() {
+  const { quantity } = useCart();
   const [cartOpen, setCartOpen] = useState(false);
 
   return (
@@ -36,8 +38,12 @@ function Header() {
       </div>
 
       <div className="flex flex-row items-center  gap-5">
-        <div onClick={() => setCartOpen(!cartOpen)}>
+        <div
+          onClick={() => setCartOpen(!cartOpen)}
+          className="flex items-center gap-3"
+        >
           <img src={cart} alt="cart" />
+          <div className="flex-1 text-orange-500 font-bold">({quantity})</div>
 
           <div>{cartOpen && <Cart />}</div>
         </div>

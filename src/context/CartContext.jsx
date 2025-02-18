@@ -7,6 +7,7 @@ export function CartProvider({ children }) {
   const initialPrice = 125;
   const [quantity, setQuantity] = useState(0);
   const [cartItem, setCartItem] = useState([]);
+  const totalPrice = initialPrice * quantity;
 
   const items = {
     id: 1,
@@ -14,7 +15,7 @@ export function CartProvider({ children }) {
     thumbnail: "./assets/image-product-1-thumbnail.jpg",
     quantity,
     price: 125,
-    totalPrice: 125 * quantity,
+    totalPrice,
   };
 
   function handleIncreaseBtn() {
@@ -33,7 +34,7 @@ export function CartProvider({ children }) {
 
       if (productExist) {
         return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quantity } : item
+          item.id === product.id ? { ...item, quantity, totalPrice } : item
         );
       } else {
         return [...prevCart, product];

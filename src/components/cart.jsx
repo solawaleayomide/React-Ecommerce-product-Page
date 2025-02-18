@@ -51,12 +51,13 @@ function Cart() {
 
   return (
     <div
-      className="bg-white rounded-2xl shadow-2xl absolute right-1 md:right-8 top-32 md:left-8 w-full md:w-[32rem] lg:left-auto lg:top-20"
+      className="bg-white rounded-2xl shadow-2xl absolute top-32 left-1/2 transform -translate-x-1/2 
+             w-full max-w-sm md:w-[32rem] lg:left-auto lg:top-20"
       style={{
         zIndex: 1000,
       }}
     >
-      <div className=" flex flex-col gap-8">
+      <div className="flex flex-col gap-8">
         <div className="border-b-2 pt-3 pb-5">
           <span className="px-5 md:px-10 font-semibold">Cart</span>
         </div>
@@ -65,7 +66,7 @@ function Cart() {
 
         {cartStatus && (
           <div className="px-5 md:px-10 pb-5" onClick={handleResetBtn}>
-            <button className="flex flex-row items-center  justify-center gap-3 bg-orange-500 py-3 px-16 rounded-md font-semibold w-full">
+            <button className="flex flex-row items-center justify-center gap-3 bg-orange-500 py-3 px-16 rounded-md font-semibold w-full">
               Checkout
             </button>
           </div>
