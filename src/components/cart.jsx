@@ -51,8 +51,7 @@ function Cart() {
 
   return (
     <div
-      className="bg-white rounded-2xl shadow-2xl absolute top-32 left-1/2 transform -translate-x-1/2 
-             w-full max-w-sm md:w-[32rem] lg:left-auto lg:top-20"
+      className="bg-white rounded-2xl shadow-2xl absolute top-20 left-1/2 transform -translate-x-1/2 md:translate-x-[10rem] w-full max-w-sm md:w-[32rem]"
       style={{
         zIndex: 1000,
       }}
